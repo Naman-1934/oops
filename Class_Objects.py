@@ -1,9 +1,30 @@
 class chatbook:
+
+    __user_id = 0
+
+    # The __init__ method in Python is commonly referred to as a constructor. It's the special method that's automatically called 
+    # when a new object (instance) of a class is created. 
     def __init__(self):
-        self.email = ''
+        self.id = chatbook.__user_id
+        chatbook.__user_id += 1
+        self.__name = 'Naman'
         self.password = ''
         self.loggedin = False
-        self.menu()
+        # self.menu() 
+
+    @staticmethod
+    def get_id():
+        return chatbook.__user_id
+    
+    @staticmethod
+    def set_id(val):
+        chatbook.__user_id = val
+
+    def get_name(self):
+        return self.__name
+    
+    def set_name(self, value):
+        self.__name = value
 
     def menu(self):
         user_input = input("""Welcome to chatbook || How would like to proceed?
